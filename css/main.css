@@ -147,6 +147,7 @@ body {
 /* /////////////////////////////////////////////////// */
 
 .day__Name {
+    border: 1px solid black;
     font-size: 12px;
     text-transform: uppercase;
     color: var(--gray-light);
@@ -154,6 +155,10 @@ body {
     line-height: 50px;
     font-weight: bold;
     border-bottom: 1px solid var(--gray-light);
+}
+
+.day__Name:hover {
+    color: green;
 }
 
 .day__Disabled {
@@ -201,4 +206,43 @@ body {
     grid-row: 4;
     align-self: center;
     margin-top: -5px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    body {
+        padding: 0;
+    }
+
+    .calendar__Container {
+        width: 90%;
+        border-radius: 30px;
+    }
+
+    .calendar {
+        grid-template-columns: repeat(7, minmax(10px, 1fr));
+        grid-template-rows: 50px;
+        grid-auto-rows: 90px;
+    }
+
+    .day:nth-last-of-type(n + 36):nth-last-of-type(-n + 42) {
+        border-bottom: none;
+    }
+
+    .day__Disabled:nth-last-of-type(n + 42):nth-last-of-type(-n + 42) {
+        border-bottom-right-radius: 20px;
+    }
+
+    .task__Html {
+        margin-top: 13px;
+    }
+
+    .task__Css {
+        margin-bottom: 0px;
+    }
+
+    .task__JavaScript {
+        align-self: end;
+    }
 }
